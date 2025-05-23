@@ -1,5 +1,4 @@
 import { Injectable, inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { questions } from '../models/shuffle.model';
 import { multiChoiceQuestions } from '../mock/questions';
 import { Observable, of } from 'rxjs';
@@ -9,7 +8,6 @@ import { Observable, of } from 'rxjs';
 })
 export class ShuffleService {
 
-  protected http = inject(HttpClient);
 
   constructor() { }
 
