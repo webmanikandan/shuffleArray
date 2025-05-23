@@ -1,22 +1,24 @@
 <!-- <router-outlet></router-outlet> -->
 <div class="container">
   <div class="col-sm-12">
+    <h2>Shuffle Array</h2>
     <div class="row">
-      <h2>Shuffle Array</h2>
       @for(q of questions$ | async; track q.id){
-      <div class="card" style="width: 18rem">
-        <div class="card-body">
-          <h4 class="card-subtitle mb-2 text-body-secondary">
-            {{ q.question }}
-          </h4>
-          @for(option of q.options; track option){
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-              <input type="radio" name="{{ q.id }}" value="option" />
-              {{ option }}
-            </li>
-          </ul>
-          }
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-subtitle mb-2 text-body-secondary">
+              {{ q.question }}
+            </h4>
+            @for(option of q.options; track option){
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <input type="radio" name="{{ q.id }}" value="option" />
+                {{ option }}
+              </li>
+            </ul>
+            }
+          </div>
         </div>
       </div>
       }
